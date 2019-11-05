@@ -27,6 +27,7 @@ Normalmente vamos a trabajar con datos numéricos, así que vemos a necesitar al
   ~$ sudo make
   ~$ sudo make install
   ```
+
 * Descargar RStudio desde https://rstudio.com/products/rstudio/download/#download (RStudio 1.2.5019 - Ubuntu 18/Debian 10 (64-bit))
   ```bash
   sudo apt install gdebi-core
