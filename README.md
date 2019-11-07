@@ -91,5 +91,5 @@ Normalmente vamos a trabajar con datos numéricos, así que vemos a necesitar al
 Para poder comenzar a hacer análisis de datos vamos a instalar los siguientes paquetes de datos:
 
 ```R
-> install.package(c("gapminder", "nycityflights13", "Lahman"))
+> install.package(c("gapminder", "nycflights13", "Lahman"))
 ```
