@@ -65,5 +65,34 @@ ggplot(data = mpg) +
              color = "red",
              fill = "yellow")
 
+
 ggplot(data = mpg) +
-  geom_point(mapping = aes(x = displ, y = hwy), color = "green")
+  geom_point(mapping = aes(x = displ, y = cyl),
+             shape = 21,
+             size = 1,
+             color = "red",
+             fill = "green")
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = cty),
+             shape = 22,
+             size = 3,
+             color = "yellow",
+             fill = "purple")
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy),
+             shape = 23,
+             size = 5,
+             color = "orange",
+             fill = "blue",
+             stroke = 3)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ,
+                           y = cty,
+                           color = displ < 4
+                           )
+             )
+
+?geom_point
