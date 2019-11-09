@@ -95,4 +95,24 @@ ggplot(data = mpg) +
                            )
              )
 
-?geom_point
+## Facets
+# facet_wrap(~<FORMULA_VARIABLE>): La variable debe ser discreta.
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(~class, nrow = 3)
+
+# No recomendable usar variables contínuas en el facet, pues
+# generará un gráfico por cada valor existente de dicha
+# variable, por ejemplo:
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(~cty, nrow = 3)
+
+# facet_grid(<FORMULA_VARIABLE1>~<FORMULA_VARIABLE2>)
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(drv~cyl)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_grid(~cyl)
