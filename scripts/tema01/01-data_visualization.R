@@ -114,5 +114,39 @@ ggplot(data = mpg) +
   facet_grid(drv~cyl)
 
 ggplot(data = mpg) +
+  geom_point(mapping = aes(x=drv, y = cyl)) 
+
+ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_grid(~cyl)
+
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x=displ, y = hwy)) +
+  facet_grid(.~cyl)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x=displ, y = hwy)) +
+  facet_grid(drv~.)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(~class, nrow = 3)
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(~class, scales = "free")
+
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x = displ, y = hwy)) +
+  facet_wrap(vars(cyl, drv))
+
+?facet_wrap
+?facet_grid
+
+# Diferentes geometrías.
+ggplot(data = mpg) +
+  geom_point(mapping = aes(x=displ, y = hwy))
+
+ggplot(data = mpg) +
+  geom_smooth(mapping = aes(x=displ, y = hwy))
