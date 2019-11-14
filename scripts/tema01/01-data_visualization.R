@@ -174,3 +174,21 @@ ggplot(data = mpg, mapping = aes(x=displ, y = cty)) +
 ggplot(data = mpg, mapping = aes(x=displ, y = hwy)) +
   geom_point(mapping = aes(color = class)) +
   geom_smooth(data = filter(mpg, class == "suv"), se = F)
+
+ggplot(data = mpg, mapping = aes(x=displ, y = hwy,color = drv)) + 
+  geom_point() + 
+  geom_smooth( se = F)
+
+library(ggplot2)
+library(dplyr)
+
+#Ejemplo del dataset de diamantes
+View(diamonds)
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut))
+
+?geom_bar
+
+ggplot(data = diamonds) +
+  stat_count(mapping = aes(x=cut))
