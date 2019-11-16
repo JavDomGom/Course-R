@@ -216,3 +216,45 @@ ggplot(data = diamonds) +
     fun.ymax = max,
     fun.y = median
   )
+
+# Colores y formas de los gráficos
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut, colour = cut))
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut, fill = cut))
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut, fill = clarity))
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=cut, fill = color))
+
+## position = "identity"
+ggplot(data = diamonds, mapping = aes(x=cut, fill = clarity)) +
+  geom_bar(alpha = 0.2, position = "identity")
+
+ggplot(data = diamonds, mapping = aes(x=cut, colour = clarity)) +
+  geom_bar(fill = NA, position = "identity")
+
+## position = "fill"
+ggplot(data = diamonds, mapping = aes(x=cut, fill = clarity)) +
+  geom_bar(position = "fill")
+
+## position = "dodge"
+ggplot(data = diamonds, mapping = aes(x=cut, fill = clarity)) +
+  geom_bar(position = "dodge")
+
+# Volvemos al scatterplot
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_point(position = "jitter")
+
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
+  geom_jitter()
+
+?position_stack
+?position_identity
+?position_fill
+?position_dodge
+?position_jitter
