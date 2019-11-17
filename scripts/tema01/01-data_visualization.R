@@ -258,3 +258,36 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) +
 ?position_fill
 ?position_dodge
 ?position_jitter
+
+# Sistemas de coordenadas
+
+# coord_flip() -> Cambia los papeles de x e y
+ggplot(data = mpg, mapping = aes(x = class, y = hwy)) +
+  geom_boxplot() +
+  coord_flip()
+
+# coord_quickmap() -> Configura el aspect ratio para mapas
+install.packages("maps")
+
+usa <- map_data("usa")
+
+ggplot(usa, aes(long, lat, group = group)) +
+  geom_polygon(fill="blue", color="white") +
+  coord_quickmap()
+
+italy <- map_data("italy")
+
+ggplot(italy, aes(long, lat, group = group)) +
+  geom_polygon(fill="blue", color="white") +
+  coord_quickmap()
+
+## coord_polar()
+ggplot(data = diamonds) +
+  geom_bar(
+    mapping = aes(x=cut, fill = cut),
+    show.legend = F,
+    width = 1
+  ) +
+  theme(aspect.ratio = 1) +
+  labs(x=NULL, y=NULL) +
+  coord_polar()
