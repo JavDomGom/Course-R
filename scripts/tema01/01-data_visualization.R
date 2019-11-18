@@ -291,3 +291,22 @@ ggplot(data = diamonds) +
   theme(aspect.ratio = 1) +
   labs(x=NULL, y=NULL) +
   coord_polar()
+
+# Gramática por capas de ggplot2
+
+# ggplot(data = <DATA_FRAME>) +
+#    <GEOM_FUNCTION>(
+#      mapping = aes(<MAPPINGS>),
+#      stat = <STAT>,
+#      position = <POSITION>
+#    ) +
+#    <COORDINATE_FUNCTION> +
+#    <FACET_FUNCTION>()
+
+ggplot(data = diamonds) +
+  geom_bar(mapping = aes(x=clarity, fill=clarity, y=..count..)) +
+  coord_polar() +
+  facet_wrap(~cut) +
+  labs(x=NULL, y=NULL, title="Ejemplo final de ggplot con JB",
+       caption="Dos variables cruzadas de diamonds",
+       subtitle = "XXX")
