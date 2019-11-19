@@ -292,6 +292,14 @@ ggplot(data = diamonds) +
   labs(x=NULL, y=NULL) +
   coord_polar()
 
+ggplot(data = mpg, mapping = aes(x=cty, y=hwy)) +
+  geom_point() +
+  geom_abline() +
+  coord_fixed()
+
+?geom_jitter
+?geom_boxplot
+
 # Gramática por capas de ggplot2
 
 # ggplot(data = <DATA_FRAME>) +
