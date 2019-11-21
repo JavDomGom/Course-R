@@ -26,3 +26,20 @@ View(flights)
 ## 1 - Data frame
 ## 2 - Operaciones que queremos hacer a las variables del data frame.
 ## 3 - Resultado en un nuevo data frame.
+
+### FILTER
+# Todos los vuelos en 1 de enero.
+jan01 <- filter(flights, month == 1, day == 1)
+# Todos los vuelos en 14 de abril.
+apr14 <- filter(flights, month == 4, day == 14)
+
+(dec25 <- filter(flights, month == 12, day == 25))
+
+3 == 3
+sqrt(2)^2
+3 == 3
+sqrt(2)^2 == 2
+near(sqrt(2)^2, 2)
+1/pi * pi == 1
+1/49 * 49 == 1
+near(1/49*49, 1)
