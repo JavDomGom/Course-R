@@ -43,3 +43,12 @@ near(sqrt(2)^2, 2)
 1/pi * pi == 1
 1/49 * 49 == 1
 near(1/49*49, 1)
+
+filter(flights, month == 5 | month == 6)
+
+may_june <- filter(flights, month %in% c(5,6))
+
+# Ley de Morgan
+# !(x&y) == (!x)|(!y)
+# !(x|y) == (!x)&(!y)
+
