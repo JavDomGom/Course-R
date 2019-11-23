@@ -52,3 +52,5 @@ may_june <- filter(flights, month %in% c(5,6))
 # !(x&y) == (!x)|(!y)
 # !(x|y) == (!x)&(!y)
 
+filter(flights, !(arr_delay > 60 | dep_delay > 60))
+filter(flights, arr_delay <= 60, dep_delay <= 60)
