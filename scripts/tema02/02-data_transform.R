@@ -54,3 +54,24 @@ may_june <- filter(flights, month %in% c(5,6))
 
 filter(flights, !(arr_delay > 60 | dep_delay > 60))
 filter(flights, arr_delay <= 60, dep_delay <= 60)
+
+NA > 0
+10 == NA
+NA + 5
+NA / 5
+NA == NA
+
+# La tía Mery tiene una edad desconocida. No sé cómo de vieja es.
+age.mery <- NA
+
+# El tío John también hace mucho que no lo veo, y no sé cuantos años tiene.
+age.john <- NA
+
+# Deben de tener la misma edad John y Mery?
+age.mery == age.john
+
+is.na(age.mery)
+
+df <- tibble(x=c(1,2,NA,4,5))
+filter(df, x>2)
+filter(df, is.na(x)|x>2)
