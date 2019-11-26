@@ -75,3 +75,22 @@ is.na(age.mery)
 df <- tibble(x=c(1,2,NA,4,5))
 filter(df, x>2)
 filter(df, is.na(x)|x>2)
+
+head(flights, 10)
+tail(flights, 10)
+
+## ARRANGE
+sorted_date <- arrange(flights, year, month, day)
+tail(sorted_date)
+
+head(arrange(flights, desc(arr_delay)))
+
+arrange(flights, desc(dep_delay))
+
+arrange(df, x)
+arrange(df, desc(x))
+
+View(arrange(flights, carrier))
+
+View(arrange(flights, distance))
+View(arrange(flights, desc(distance)))
