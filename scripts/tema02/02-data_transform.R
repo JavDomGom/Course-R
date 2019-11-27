@@ -79,7 +79,7 @@ filter(df, is.na(x)|x>2)
 head(flights, 10)
 tail(flights, 10)
 
-## ARRANGE
+### ARRANGE
 sorted_date <- arrange(flights, year, month, day)
 tail(sorted_date)
 
@@ -94,3 +94,13 @@ View(arrange(flights, carrier))
 
 View(arrange(flights, distance))
 View(arrange(flights, desc(distance)))
+
+
+### SELECT
+
+arrange(flights, carrier)
+View(sorted_date[1024:1068,])
+
+View(select(sorted_date[1024:1068,], dep_delay, arr_delay))
+
+select(flights, year, month, day)
